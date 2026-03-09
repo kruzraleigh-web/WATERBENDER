@@ -1,11 +1,15 @@
 :root {
   --bg: #081421;
-  --panel: rgba(4, 17, 30, 0.9);
+  --panel: rgba(4, 17, 30, 0.86);
   --water: #4fc8ff;
+  --water-strong: #92e2ff;
+  --enemy: #ff5e5e;
   --text: #e4f6ff;
 }
 
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 
 body {
   margin: 0;
@@ -27,50 +31,33 @@ body {
   background: var(--panel);
   border: 1px solid #1e4d6b;
   border-radius: 12px;
-  padding: 10px 12px;
-  z-index: 3;
-}
-
-.top-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 8px;
-}
-
-h1 { margin: 0; font-size: 1.2rem; }
-
-.buttons { display: flex; gap: 8px; }
-
-button {
   padding: 8px 12px;
-  border: none;
-  border-radius: 8px;
-  background: #1d72a8;
-  color: #fff;
-  cursor: pointer;
+  z-index: 2;
 }
 
-button:hover { background: #278ccd; }
+h1 {
+  margin: 0;
+  font-size: 1.2rem;
+}
 
 .stats {
-  margin-top: 8px;
+  margin-top: 6px;
   display: flex;
-  gap: 12px;
+  gap: 14px;
   flex-wrap: wrap;
 }
 
 .hint {
   margin: 8px 0 0;
   font-size: 0.85rem;
-  opacity: 0.9;
+  opacity: 0.88;
 }
 
 canvas {
-  margin-top: 120px;
+  margin-top: 110px;
   width: min(1000px, 95vw);
   height: auto;
-  max-height: calc(100vh - 140px);
+  max-height: calc(100vh - 130px);
   border: 2px solid #2a5d7f;
   border-radius: 14px;
   background: linear-gradient(#102235, #091824);
@@ -78,40 +65,31 @@ canvas {
   cursor: crosshair;
 }
 
-.overlay {
+.game-over {
   position: absolute;
   inset: 0;
   display: grid;
   place-content: center;
   text-align: center;
-  gap: 10px;
-  background: rgba(3, 8, 16, 0.75);
-  z-index: 5;
+  gap: 8px;
+  background: rgba(3, 8, 16, 0.72);
+  z-index: 4;
 }
 
-.choices {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(220px, 260px));
-  gap: 10px;
-}
-
-.choice {
-  text-align: left;
-  border: 1px solid #2a6d9c;
-  padding: 10px;
+.game-over button {
+  justify-self: center;
+  padding: 10px 18px;
+  background: #1d72a8;
+  color: white;
+  border: none;
   border-radius: 8px;
-  background: rgba(17, 42, 63, 0.9);
+  cursor: pointer;
 }
 
-.choice h3 {
-  margin: 0 0 6px;
-  font-size: 1rem;
+.game-over button:hover {
+  background: #278ccd;
 }
 
-.choice p {
-  margin: 0 0 8px;
-  font-size: 0.85rem;
-  opacity: 0.9;
+.hidden {
+  display: none;
 }
-
-.hidden { display: none; }

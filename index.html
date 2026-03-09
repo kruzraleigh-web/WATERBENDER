@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Waterbender Arena</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="ui">
+    <h1>Waterbender Arena</h1>
+    <div class="stats">
+      <span id="healthText">Health: 100</span>
+      <span id="waterText">Water: 100</span>
+      <span id="scoreText">Score: 0</span>
+    </div>
+    <p class="hint">
+      WASD move • Mouse aim • Left click: Water Whip • Right click: Water Wave • Space: Ice Shard
+    </p>
+  </div>
+
+  <canvas id="gameCanvas" width="1000" height="620"></canvas>
+
+  <div id="gameOverPanel" class="game-over hidden">
+    <h2>Defeated</h2>
+    <p id="finalScore">Score: 0</p>
+    <button id="restartBtn">Restart</button>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>

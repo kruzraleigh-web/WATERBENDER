@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Waterbender Arena</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="ui">
+    <div class="top-row">
+      <h1>Waterbender Arena</h1>
+      <div class="buttons">
+        <button id="pauseBtn">Pause</button>
+        <button id="restartTopBtn">Restart</button>
+      </div>
+    </div>
+    <div class="stats">
+      <span id="healthText">Health: 100</span>
+      <span id="waterText">Water: 100</span>
+      <span id="scoreText">Score: 0</span>
+      <span id="waveText">Wave: 1</span>
+      <span id="levelText">Level: 1</span>
+    </div>
+    <p class="hint">
+      WASD move • Click orb + drag: Water Whip • Release: launch • Space while dragging: Ice Whip • Right click: Water Wave
+    </p>
+  </div>
+
+  <canvas id="gameCanvas" width="1000" height="620"></canvas>
+
+  <div id="gameOverPanel" class="overlay hidden">
+    <h2>Defeated</h2>
+    <p id="finalScore">Score: 0</p>
+    <button id="restartBtn">Restart Run</button>
+  </div>
+
+  <div id="levelPanel" class="overlay hidden">
+    <h2>Wave Cleared!</h2>
+    <p>Choose 1 upgrade before next wave:</p>
+    <div id="levelChoices" class="choices"></div>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
